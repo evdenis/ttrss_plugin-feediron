@@ -397,6 +397,10 @@ class Feediron extends Plugin implements IHandler
 		{
 			$html = $this->reformat($html, $config['modify']);
 		}
+
+		if (isset($config['force_noscript']) && $config['force_noscript']) {
+			$html = str_replace(array('<noscript>', '</noscript>'), '', $html);
+		}
 		return $html;
 	}
 

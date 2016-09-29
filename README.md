@@ -156,6 +156,7 @@ the fetching stops if an url is added twice.
   * **regex** takes a regex in an option called **pattern** and the replacement in **replace**. For details see [preg_replace](http://www.php.net/manual/de/function.preg-replace.php) in the PHP documentation. 
   * **replace** uses the PHP function str_replace, which takes either a string or an array as search and replace value.  
 * **modify** is the same as described above but for the content. It is applied after the split/xpath selection.
+* **force_noscript** forces noscript tag contents to be displayed.
 
 If you get an error about "Invalid JSON!", you can use [JSONLint](http://jsonlint.com/) to locate the erroneous part. There is a basic error detection implemented.
 
