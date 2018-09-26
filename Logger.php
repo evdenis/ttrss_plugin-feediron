@@ -15,7 +15,7 @@ class Feediron_Logger{
 		return self::$logger;
 	}
 
-	private $loglevel = LOG_NONE;
+	private $loglevel = self::LOG_NONE;
 	private $testlog = array();
 	private $time_measure = false;
 
@@ -30,11 +30,11 @@ class Feediron_Logger{
 		if($level > $this->loglevel)
 			return;
 		if($level == self::LOG_TTRSS){
-			trigger_error($msg, E_USER_WARNING);
+			trigger_error($msg, E_USER_NOTICE);
 			array_push($this->testlog, "<h2>LOG:</h2><pre>".htmlentities($msg)."</pre>");
 		}else{
 			array_push($this->testlog, "<h2>$msg</h2>");
-			array_push($this->testlog, "<pre>".htmlentities($details)."</pre>");
+			array_push($this->testlog, "<details><pre>".htmlentities($details)."</pre></details>");
 		}
 	}
 	public function log_json($level, $msg, $json){
